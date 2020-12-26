@@ -1,0 +1,12 @@
+#logo-wrapper {
+  display: flex;
+}
+
+#logo {
+  width: 35px;
+}
+
+#navbar-container {
+  display: flex;
+  justify-content: space-between;
+}
