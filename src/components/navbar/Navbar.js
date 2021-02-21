@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Image } from "react-bootstrap";
-import "./Navbar.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../images/logo.png";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Navbar.css";
 
-function NavBar() {
+function NavBar(props) {
+  const [showBg, setShowBg] = useState(false);
+
+  const showBackground = () => {
+    if (window.scrollY >= 10) {
+      setShowBg(true);
+    } else {
+      setShowBg(false);
+    }
+  };
+
+  window.addEventListener("scroll", showBackground);
+
   return (
-    <>
-      <Navbar id="navbar-container">
+    <div id="navbar-wrapper">
+      <Navbar className={showBg ? "navbar active" : "navbar"}>
         <div className="box">
           <Navbar.Brand id="logo-wrapper" href="#home">
             <Image id="logo" src={logo} />
@@ -34,7 +46,7 @@ function NavBar() {
           </div>
         </div>
       </Navbar>
-    </>
+    </div>
   );
 }
 

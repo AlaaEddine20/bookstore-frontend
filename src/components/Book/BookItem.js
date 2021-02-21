@@ -1,22 +1,27 @@
 import React from "react";
-import { Card, Button, Row, Col } from "react-bootstrap";
+import { Card, Button, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./BookItem.css";
 
 const BookItem = ({ book }) => {
   return (
-    <Row className="justify-content-center">
-      <Col xs={12} sm={12} md={6} lg={3}>
-        <Card id="card">
-          <Card.Img variant="top" src={book.img} />
-          <Card.Body>
-            <Card.Title>{book.title}</Card.Title>
-            <Card.Text>{book.category}</Card.Text>
-            <Button variant="primary">More info</Button>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+    <Col sm={12} md={6} lg={3}>
+      <Card id="card">
+        <div>
+          <Card.Img id="card-img" variant="top" src={book.img} />
+        </div>
+        <Card.Body>
+          <div className="info">
+            <div>
+              <h6>{book.category}</h6>
+            </div>
+            <Button id="card-btn" variant="warning">
+              More info
+            </Button>
+          </div>
+        </Card.Body>
+      </Card>
+    </Col>
   );
 };
 
