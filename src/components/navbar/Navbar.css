@@ -7,6 +7,25 @@
 }
 
 #navbar-container {
+  width: 90%;
+  height: 10%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  margin: auto;
+  padding: 1rem 0;
+  background: transparent;
+}
+
+.nav-links {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
